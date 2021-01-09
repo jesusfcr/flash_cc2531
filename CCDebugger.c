@@ -80,7 +80,7 @@ int cc_init( int pRST, int pDC, int pDD )
     printf("no wiring pi detected\n");
     return 0;
   }
-  cc_delay_calibrate();
+  // cc_delay_calibrate();
 
   // Prepare CC Pins
   pinMode(pinDC,        OUTPUT);
@@ -174,7 +174,7 @@ uint8_t cc_error()
  * Delay a particular number of cycles
  */
 struct timespec tp={0,0};
-static int cc_delay_mult=80;
+static int cc_delay_mult=100;
 void cc_delay( unsigned int d )
 {
   volatile unsigned int i = cc_delay_mult*d;
